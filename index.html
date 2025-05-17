@@ -1,0 +1,2250 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oluwalargess Real Estates & Autos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <style>
+        :root {
+            --primary-color: #1a237e;
+            --primary-light: #534bae;
+            --primary-dark: #000051;
+            --secondary-color: #ff6f00;
+            --secondary-light: #ffa040;
+            --secondary-dark: #c43e00;
+            --accent-color: #3d5afe;
+            --light-color: #f5f5f5;
+            --dark-color: #212121;
+            --success-color: #4caf50;
+            --error-color: #f44336;
+            --text-primary: #212121;
+            --text-secondary: #757575;
+            --text-light: #ffffff;
+            --grey-100: #f5f5f5;
+            --grey-200: #eeeeee;
+            --grey-300: #e0e0e0;
+            --shadow-1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            --shadow-2: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+            --shadow-3: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+            --shadow-4: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+            --shadow-5: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+            --border-radius-sm: 4px;
+            --border-radius-md: 8px;
+            --border-radius-lg: 16px;
+            --gutter: 24px;
+            --container-max-width: 1280px;
+            --header-height: 70px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .preloader.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .preloader-circle {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            border-top: 4px solid var(--secondary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--text-primary);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--accent-color);
+            transition: all 0.3s ease;
+        }
+
+        /* Utility Classes */
+        .container {
+            width: 100%;
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--gutter);
+            position: relative;
+        }
+
+        .section {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-bg-light {
+            background-color: var(--grey-100);
+        }
+
+        .section-title-container {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-subtitle {
+            color: var(--secondary-color);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            display: block;
+            font-size: 0.9rem;
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .section-description {
+            max-width: 700px;
+            margin: 0 auto 20px;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-gap: var(--gutter);
+        }
+
+        .align-center {
+            align-items: center;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            font-weight: 500;
+            font-size: 1rem;
+            text-align: center;
+            text-decoration: none;
+            border-radius: var(--border-radius-md);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: var(--shadow-1);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn:hover {
+            box-shadow: var(--shadow-3);
+            transform: translateY(-2px);
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 300px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+            z-index: -1;
+        }
+
+        .btn:hover::after {
+            transform: translate(-50%, -50%) scale(1.5);
+        }
+
+        .btn-sm {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: var(--shadow-1);
+            height: var(--header-height);
+        }
+
+        header.scrolled {
+            background-color: rgba(26, 35, 126, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-2);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: var(--header-height);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 30px;
+            position: relative;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 8px 0;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--secondary-color);
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            color: white;
+            padding-top: var(--header-height);
+            background: linear-gradient(to right, rgba(0, 0, 18, 0.9), rgba(0, 0, 18, 0.6)), url('https://cdn.pixabay.com/photo/2017/04/10/22/28/residence-2219972_1280.jpg');
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: left;
+            transform: translateY(-50px);
+        }
+
+        .hero-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            opacity: 0;
+            animation: fadeInLeft 1s forwards 0.5s;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: 700;
+            opacity: 0;
+            animation: fadeInLeft 1s forwards 0.8s;
+        }
+
+        .hero h1 span {
+            color: var(--secondary-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            opacity: 0;
+            animation: fadeInLeft 1s forwards 1.1s;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            opacity: 0;
+            animation: fadeInUp 1s forwards 1.4s;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            animation: fadeInUp 1s forwards 1.8s, bounce 2s infinite 2.8s;
+        }
+
+        .hero-scroll a {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-scroll .text {
+            font-size: 0.8rem;
+            margin-bottom: 8px;
+            color: white;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image {
+            grid-column: 1 / span 5;
+            position: relative;
+            z-index: 1;
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-3);
+            transform: translateY(40px);
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .about-image.animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: -30px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--secondary-color);
+            border-radius: var(--border-radius-md);
+            z-index: -1;
+            transition: all 0.3s ease;
+        }
+
+        .about-image:hover::before {
+            top: 15px;
+            left: -15px;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: var(--border-radius-md);
+            transition: all 0.5s ease;
+        }
+
+        .about-content {
+            grid-column: 7 / span 6;
+            transform: translateY(40px);
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) 0.2s;
+        }
+
+        .about-content.animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .about-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .about-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .about-subtitle {
+            color: var(--secondary-color);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            display: block;
+            font-size: 0.9rem;
+        }
+
+        .about-text {
+            margin-bottom: 30px;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .about-feature i {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            padding-top: 4px;
+        }
+
+        .about-feature-text {
+            flex: 1;
+        }
+
+        .about-feature-text h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .about-feature-text p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+            color: var(--text-secondary);
+        }
+
+        /* Services Section */
+        .services {
+            background-color: var(--grey-100);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-color) 100%);
+            opacity: 0.05;
+            border-radius: 50%;
+            transform: translate(200px, -200px);
+        }
+
+        .services::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--secondary-light) 0%, var(--secondary-color) 100%);
+            opacity: 0.05;
+            border-radius: 50%;
+            transform: translate(-150px, 150px);
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-2);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            z-index: 1;
+            transform: translateY(40px);
+            opacity: 0;
+        }
+
+        .service-card.animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-4);
+        }
+
+        .service-card:hover .service-icon {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .service-header {
+            padding: 30px 30px 15px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(26, 35, 126, 0.1);
+            color: var(--primary-color);
+            font-size: 1.7rem;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            margin: 0;
+            flex: 1;
+        }
+
+        .service-body {
+            padding: 0 30px 30px;
+        }
+
+        .service-description {
+            margin-bottom: 20px;
+        }
+
+        /* Properties Section */
+        .properties {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 30px;
+        }
+
+        .property-card {
+            background: white;
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-2);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            transform: translateY(40px);
+            opacity: 0;
+        }
+
+        .property-card.animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .property-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-4);
+        }
+
+        .property-image {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .property-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .property-card:hover .property-image img {
+            transform: scale(1.1);
+        }
+
+        .property-price {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: var(--border-radius-sm);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .property-content {
+            padding: 25px;
+        }
+
+        .property-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .property-features {
+            display: flex;
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+            gap: 15px;
+            font-size: 0.9rem;
+        }
+
+        .property-feature {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .property-feature i {
+            color: var(--secondary-color);
+        }
+
+        .property-description {
+            margin-bottom: 20px;
+        }
+
+        /* Auto Services Section */
+        .auto-services {
+            background-color: var(--grey-100);
+            position: relative;
+            clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+            padding: 150px 0;
+        }
+
+        .auto-services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 30px;
+        }
+
+        .auto-service-card {
+            background: white;
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-2);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            transform: translateY(40px);
+            opacity: 0;
+        }
+
+        .auto-service-card.animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .auto-service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-4);
+        }
+
+        .auto-service-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .auto-service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .auto-service-card:hover .auto-service-image img {
+            transform: scale(1.1);
+        }
+
+        .auto-service-content {
+            padding: 25px;
+        }
+
+        .auto-service-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .auto-service-description {
+            margin-bottom: 20px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-upload {
+            background: white;
+            border-radius: var(--border-radius-md);
+            padding: 40px;
+            box-shadow: var(--shadow-2);
+            text-align: center;
+            margin-bottom: 50px;
+            transform: translateY(40px);
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .gallery-upload.animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .gallery-upload-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .gallery-upload-description {
+            margin-bottom: 25px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-auto-rows: 300px;
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-1);
+            transform: translateY(40px);
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .gallery-item.animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .gallery-item.item-1 {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .gallery-item.item-2 {
+            grid-column: span 2;
+            grid-row: span 1;
+        }
+
+        .gallery-item.item-3 {
+            grid-column: span 1;
+            grid-row: span 2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 18, 0.7);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-icon {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            transform: translateY(20px);
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover .gallery-icon {
+            transform: translateY(0);
+        }
+
+        .gallery-caption {
+            color: white;
+            font-weight: 500;
+            transform: translateY(20px);
+            transition: transform 0.5s ease 0.1s;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--grey-100);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            width: 200px;
+            height: 200px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 0 1-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 0 1-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z' fill='rgba(77,171,247,0.2)'/%3E%3C/svg%3E") repeat;
+            opacity: 0.5;
+        }
+
+        .testimonials::after {
+            content: '';
+            position: absolute;
+            bottom: 50px;
+            left: 50px;
+            width: 200px;
+            height: 200px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24, 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M19.417 6.679C20.447 7.773 21 9 21 10.989c0 3.5-2.457 6.637-6.03 8.188l-.893-1.378c3.335-1.804 3.987-4.145 4.247-5.621-.537.278-1.24.375-1.929.311-1.804-.167-3.226-1.648-3.226-3.489a3.5 3.5 0 0 1 3.5-3.5c1.073 0 2.099.49 2.748 1.179zm-10 0C10.447 7.773 11 9 11 10.989c0 3.5-2.457 6.637-6.03 8.188l-.893-1.378c3.335-1.804 3.987-4.145 4.247-5.621-.537.278-1.24.375-1.929.311C5.591 12.322 4.173 10.841 4.173 9a3.5 3.5 0 0 1 3.5-3.5c1.073 0 2.099.49 2.748 1.179z' fill='rgba(255,111,0,0.2)'/%3E%3C/svg%3E") repeat;
+            opacity: 0.5;
+        }
+
+        .testimonials-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-2);
+            position: relative;
+            transform: translateY(40px);
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .testimonial-card.animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .testimonial-text {
+            position: relative;
+            padding: 0 20px;
+            margin-bottom: 30px;
+            font-style: italic;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .testimonial-text::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 0;
+            font-size: 4rem;
+            color: var(--primary-color);
+            opacity: 0.2;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            box-shadow: var(--shadow-1);
+        }
+
+        .testimonial-author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-author-info h4 {
+            font-size: 1.1rem;
+            margin: 0;
+            color: var(--primary-color);
+        }
+
+        .testimonial-author-info p {
+            font-size: 0.9rem;
+            margin: 0;
+            color: var(--text-secondary);
+        }
+
+        .testimonial-rating {
+            display: flex;
+            color: var(--secondary-color);
+            font-size: 1rem;
+            margin-top: 5px;
+        }
+
+        /* Contact Section */
+        .contact {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(26, 35, 126, 0.03) 0%, rgba(26, 35, 126, 0.1) 100%);
+            z-index: -1;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 50px;
+        }
+
+        .contact-info {
+            grid-column: 1 / span 5;
+            transform: translateY(40px);
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .contact-info.animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .contact-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .contact-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .contact-item {
+            display: flex;
+            margin-bottom: 30px;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            box-shadow: var(--shadow-1);
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover .contact-icon {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .contact-text h3 {
+            font-size: 1.2rem;
+            margin: 0 0 5px;
+            color: var(--primary-color);
+        }
+
+        .contact-text p {
+            margin: 0;
+            color: var(--text-secondary);
+        }
+
+        .contact-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: white;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-1);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .contact-form-container {
+            grid-column: 7 / span 6;
+            transform: translateY(40px);
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) 0.2s;
+        }
+
+        .contact-form-container.animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .contact-form-box {
+            background: white;
+            border-radius: var(--border-radius-md);
+            padding: 40px;
+            box-shadow: var(--shadow-3);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .contact-form-box::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background-color: rgba(255, 111, 0, 0.05);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .contact-form-box::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 150px;
+            height: 150px;
+            background-color: rgba(26, 35, 126, 0.05);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid var(--grey-300);
+            border-radius: var(--border-radius-md);
+            font-size: 1rem;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            background-color: var(--grey-100);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(26, 35, 126, 0.2);
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        textarea.form-control {
+            height: 150px;
+            resize: none;
+        }
+
+        .form-message {
+            display: none;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: var(--border-radius-sm);
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .form-message.success {
+            background-color: rgba(76, 175, 80, 0.1);
+            color: var(--success-color);
+            border: 1px solid var(--success-color);
+            display: block;
+        }
+
+        .form-message.error {
+            background-color: rgba(244, 67, 54, 0.1);
+            color: var(--error-color);
+            border: 1px solid var(--error-color);
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 80px 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: var(--primary-color);
+            opacity: 0.2;
+            border-radius: 50%;
+            transform: translate(150px, -150px);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-column h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 25px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-links a i {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            transform: translateX(5px);
+        }
+
+        .footer-links a:hover i {
+            transform: translateX(5px);
+        }
+
+        .footer-newsletter p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+        }
+
+        .newsletter-form {
+            position: relative;
+        }
+
+        .newsletter-input {
+            width: 100%;
+            padding: 15px;
+            padding-right: 60px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius-md);
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+
+        .newsletter-button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 50px;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-button:hover {
+            background-color: var(--secondary-dark);
+        }
+
+        .footer-bottom {
+            background-color: rgba(0, 0, 0, 0.2);
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 60px;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .about-grid,
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .about-image {
+                grid-column: 1 / -1;
+                max-height: 500px;
+                margin: 0 auto;
+                width: 100%;
+                max-width: 500px;
+            }
+
+            .about-content {
+                grid-column: 1 / -1;
+            }
+
+            .contact-info,
+            .contact-form-container {
+                grid-column: 1 / -1;
+            }
+
+            .services-container {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 991px) {
+            .section {
+                padding: 80px 0;
+            }
+
+            .hero {
+                clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            }
+
+            .auto-services {
+                clip-path: polygon(0 3%, 100% 0, 100% 97%, 0 100%);
+                padding: 120px 0;
+            }
+
+            .hero h1 {
+                font-size: clamp(2rem, 5vw, 3rem);
+            }
+
+            .properties-grid,
+            .auto-services-grid {
+                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: var(--header-height);
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                flex-direction: column;
+                padding: 20px 0;
+                transform: translateY(-100%);
+                transition: transform 0.4s ease;
+                opacity: 0;
+                visibility: hidden;
+                box-shadow: var(--shadow-2);
+            }
+
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-menu li {
+                margin: 15px 0;
+                text-align: center;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item.item-2,
+            .gallery-item.item-3 {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section {
+                padding: 50px 0;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .hero {
+                min-height: 600px;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+
+            .contact-form-box {
+                padding: 30px 20px;
+            }
+            .video-wrapper {
+                width: 100%;
+                max-width: 720px;
+                background: white;
+                padding: 20px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+            }
+            video {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+            }
+        }
+        .video-wrapper video {
+            max-width: 480px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-circle"></div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <div class="logo-img"><i class="fas fa-home"></i></div>
+                    Oluwalargess<span>Autos & Real Estate Nigeria Limited</span>
+                </a>
+                <div class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#real-estate">Real Estate</a></li>
+                    <li><a href="#auto-services">Auto Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">                
+                <span class="hero-subtitle">Your Premier Property & Automotive Partner</span>
+                <h1>Welcome to <span>Oluwalargess</span> Autos & Real Estate Nigeria Limited</h1>
+                <p>Your one-stop solution for premium real estate properties and professional auto repair services in Lagos, Nigeria.</p>
+                <div class="hero-btns">
+                    <a href="#real-estate" class="btn btn-primary">Explore Properties</a>
+                    <a href="#auto-services" class="btn btn-secondary">Our Auto Services</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <a href="#about">
+                <span class="text">Scroll Down</span>
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image" id="about-image">
+                    <img src="https://i.supaimg.com/271b33e0-c36c-4913-97c5-e3cce7e3e8d7.jpg" alt="About Oluwalargess">
+                </div>
+                <div class="about-content" id="about-content">
+                    <span class="about-subtitle">About Our Company</span>
+                    <h2 class="about-title">Your Trusted Partner in Real Estate & Auto Services</h2>
+                    <div class="about-text">
+                        <p>Oluwalargess Autos & Real Estate Nigeria Limited is a leading dual-service provider based in Lagos, Nigeria. We specialize in both premium real estate solutions and comprehensive auto repair services, offering unparalleled expertise in both domains.</p>
+                        <p>With years of experience and a commitment to excellence, we have established ourselves as the go-to company for all your real estate and automotive needs.</p>
+                    </div>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <div class="about-feature-text">
+                                <h4>Quality Properties</h4>
+                                <p>Premium residential and commercial options</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <div class="about-feature-text">
+                                <h4>Expert Mechanics</h4>
+                                <p>Certified professionals for all vehicles</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <div class="about-feature-text">
+                                <h4>Customer-Centric</h4>
+                                <p>Personalized service and support</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <div class="about-feature-text">
+                                <h4>Transparent Pricing</h4>
+                                <p>No hidden fees or surprises</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services section-bg-light" id="services">
+        <div class="container">
+            <div class="section-title-container">
+                <span class="section-subtitle">What We Offer</span>
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-description">We provide a comprehensive range of real estate and automotive solutions to meet all your needs under one roof.</p>
+            </div>
+            
+            <div class="services-container">
+                <div class="service-card" data-delay="0">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="service-title">Property Sales</h3>
+                    </div>
+                    <div class="service-body">
+                        <p class="service-description">We offer a diverse portfolio of luxurious residential and strategic commercial properties for sale across Lagos and its environs, helping you find the perfect investment opportunity.</p>
+                        <a href="#real-estate" class="btn btn-sm btn-primary">Explore Properties</a>
+                    </div>
+                </div>
+                
+                <div class="service-card" data-delay="100">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <h3 class="service-title">Property Rentals</h3>
+                    </div>
+                    <div class="service-body">
+                        <p class="service-description">Find your perfect rental property with our extensive listings of premium apartments, executive homes, and strategically located commercial spaces in the most desirable neighborhoods.</p>
+                        <a href="#contact" class="btn btn-sm btn-primary">Contact Us</a>
+                    </div>
+                </div>
+                
+                <div class="service-card" data-delay="200">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="service-title">Property Investment</h3>
+                    </div>
+                    <div class="service-body">
+                        <p class="service-description">We provide expert advice and curated opportunities for real estate investment with promising returns, backed by market research and industry insights to maximize your portfolio growth.</p>
+                        <a href="#contact" class="btn btn-sm btn-primary">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="service-card" data-delay="300">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="service-title">Auto Repair</h3>
+                    </div>
+                    <div class="service-body">
+                        <p class="service-description">Our skilled mechanics provide comprehensive repair services for all vehicle makes and models, using state-of-the-art equipment and genuine parts for lasting results.</p>
+                        <a href="#auto-services" class="btn btn-sm btn-primary">Our Services</a>
+                    </div>
+                </div>
+                
+                <div class="service-card" data-delay="400">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-oil-can"></i>
+                        </div>
+                        <h3 class="service-title">Maintenance Services</h3>
+                    </div>
+                    <div class="service-body">
+                        <p class="service-description">Ensure your vehicle's longevity with our comprehensive maintenance packages, designed to keep your car running smoothly and prevent costly future repairs and breakdowns.</p>
+                        <a href="#auto-services" class="btn btn-sm btn-primary">Our Services</a>
+                    </div>
+                </div>
+                
+                <div class="service-card" data-delay="500">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-diagnoses"></i>
+                        </div>
+                        <h3 class="service-title">Diagnostics</h3>
+                    </div>
+                    <div class="service-body">
+                        <p class="service-description">Our advanced diagnostic services identify and resolve vehicle issues with precision, using the latest computer systems and our mechanics' expertise to solve problems efficiently.</p>
+                        <a href="#contact" class="btn btn-sm btn-primary">Schedule Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Properties Section -->
+     <div class="video-wrapper">
+    <section class="section properties" id="real-estate">
+        <div class="container">
+            <div class="section-title-container">
+                <span class="section-subtitle">Real Estate Portfolio</span>
+                <h2 class="section-title">Projects</h2>
+                <p class="section-description">Discover our handpicked selection of prime real estate opportunities in the most sought-after locations across Lagos.</p>
+            </div>
+            <!-- Video Section -->
+        <div class="video-wrapper">
+            <video controls>
+                <source src="/media/Media.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+            
+            </div>
+        </div>
+       
+    </section>
+    
+   
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="contact-bg"></div>
+        <div class="container">
+            <div class="section-title-container">
+                <span class="section-subtitle">Get In Touch</span>
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-description">Reach out to us for inquiries about our properties or auto services. We're always here to help.</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info" id="contact-info">
+                    <h3 class="contact-title">Contact Information</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Location</h3>
+                            <p>No 45, ajijedidun street off Agunlejika road, ijeshatedo surulere Lagos</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Phone</h3>
+                            <p>+234 904 905 9912</p>
+                            <p>+234 904 905 9912</p>
+                            <p>+234 916 842 3457</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Email</h3>
+                            <p>info@oluwalargessautosrealestatenig@gmail.com</p>
+                            <p>support@oluwalargessautosrealestatenig@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Business Hours</h3>
+                            <p>Monday - Friday: 7:00 AM - 12:00 PM</p>
+                            <p>Saturday: 7:00 AM - 12:00 PM</p>
+                            <p>Sunday: 9:00 AM - 10:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-social">
+                        <a href="https://www.instagram.com/oluwalargessautosreal/" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container" id="contact-form-container">
+                    <div class="contact-form-box">
+                        <h3 class="contact-title">Send Us a Message</h3>
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">Your Email</label>
+                                <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" id="subject" class="form-control" placeholder="What is this regarding?">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="form-label">Your Message</label>
+                                <textarea id="message" class="form-control" placeholder="Type your message here..." required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                        
+                        <div id="form-success" class="form-message success" style="display: none;">
+                            Your message has been sent successfully! We will get back to you soon.
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column footer-about">
+                    <h3>About Oluwalargess</h3>
+                    <p>Oluwalargess Real Estates & Autos is a premier dual-service provider specializing in real estate solutions and comprehensive auto repair services in Lagos, Nigeria.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/profile.php?id=61550238984211"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/oluwalargessautosreal/reels/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/posts/oluwalargess-autos-real-estate-nig-ltd-586a83287_buildings-should-serve-people-not-the-other-activity-7095865576849379329-vXd3/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                              <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#real-estate"><i class="fas fa-chevron-right"></i> Properties</a></li>
+                        <li><a href="#auto-services"><i class="fas fa-chevron-right"></i> Auto Services</a></li>
+                        <li><a href="#gallery"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#real-estate"><i class="fas fa-chevron-right"></i> Property Sales</a></li>
+                        <li><a href="#real-estate"><i class="fas fa-chevron-right"></i> Property Rentals</a></li>
+                        <li><a href="#real-estate"><i class="fas fa-chevron-right"></i> Property Investment</a></li>
+                        <li><a href="#auto-services"><i class="fas fa-chevron-right"></i> Engine Repair</a></li>
+                        <li><a href="#auto-services"><i class="fas fa-chevron-right"></i> Brake Services</a></li>
+                        <li><a href="#auto-services"><i class="fas fa-chevron-right"></i> Oil Change</a></li>
+                        <li><a href="#auto-services"><i class="fas fa-chevron-right"></i> Electrical Systems</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter to receive the latest updates and exclusive offers.</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your Email Address" required>
+                        <button type="submit" class="newsletter-button"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                    <div id="newsletter-success" class="form-message success" style="display: none; margin-top: 10px;">
+                        Thank you for subscribing to our newsletter!
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Oluwalargess Real Estates & Autos. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Preloader
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.classList.add('fade-out');
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            }, 1500);
+
+            // Toggle Menu
+            const menuToggle = document.getElementById('menu-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+            
+            // Header Scroll Effect
+            const header = document.getElementById('header');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            // Smooth Scrolling for Anchor Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    navMenu.classList.remove('active');
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const headerHeight = document.getElementById('header').offsetHeight;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update active nav link
+                        document.querySelectorAll('.nav-menu a').forEach(navLink => {
+                            navLink.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                    }
+                });
+            });
+
+            // Add active class to nav links on scroll
+            const sections = document.querySelectorAll('section[id]');
+            
+            function highlightNavOnScroll() {
+                let scrollY = window.pageYOffset;
+                
+                sections.forEach(section => {
+                    const sectionHeight = section.offsetHeight;
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                        document.querySelector('.nav-menu a[href="#' + sectionId + '"]').classList.add('active');
+                    } else {
+                        document.querySelector('.nav-menu a[href="#' + sectionId + '"]').classList.remove('active');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', highlightNavOnScroll);
+            
+            // Animation on Scroll
+            const animatedElements = [
+                document.getElementById('about-image'),
+                document.getElementById('about-content'),
+                document.getElementById('contact-info'),
+                document.getElementById('contact-form-container'),
+                document.getElementById('gallery-upload'),
+                ...document.querySelectorAll('.service-card'),
+                ...document.querySelectorAll('.property-card'),
+                ...document.querySelectorAll('.auto-service-card'),
+                ...document.querySelectorAll('.gallery-item'),
+                ...document.querySelectorAll('.testimonial-card')
+            ];
+            
+            const animateOnScroll = () => {
+                const triggerBottom = window.innerHeight * 0.8;
+                
+                animatedElements.forEach(element => {
+                    if (element) {
+                        const elementTop = element.getBoundingClientRect().top;
+                        
+                        if (elementTop < triggerBottom) {
+                            // Add delay for staggered animation
+                            const delay = element.dataset.delay || 0;
+                            setTimeout(() => {
+                                element.classList.add('animate');
+                            }, delay);
+                        }
+                    }
+                });
+            };
+            
+            window.addEventListener('scroll', animateOnScroll);
+            // Trigger initial animation check
+            setTimeout(animateOnScroll, 100);
+            
+            // Photo Upload Functionality (Simulated)
+            const uploadBtn = document.getElementById('upload-btn');
+            const uploadSuccess = document.getElementById('upload-success');
+            
+            uploadBtn.addEventListener('click', () => {
+                uploadSuccess.style.display = 'block';
+                
+                setTimeout(() => {
+                    uploadSuccess.style.display = 'none';
+                }, 5000);
+            });
+            
+            // Contact Form Submission (Simulated)
+            const contactForm = document.getElementById('contact-form');
+            const formSuccess = document.getElementById('form-success');
+            const formError = document.getElementById('form-error');
+            
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Simulate form submission
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+                
+                if (name && email && message) {
+                    // Simulate API call
+                    setTimeout(() => {
+                        formSuccess.style.display = 'block';
+                        contactForm.reset();
+                        
+                        setTimeout(() => {
+                            formSuccess.style.display = 'none';
+                        }, 5000);
+                    }, 1000);
+                } else {
+                    formError.style.display = 'block';
+                    
+                    setTimeout(() => {
+                        formError.style.display = 'none';
+                    }, 5000);
+                }
+            });
+            
+            // Newsletter Form (Simulated)
+            const newsletterForm = document.getElementById('newsletter-form');
+            const newsletterSuccess = document.getElementById('newsletter-success');
+            
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Simulate form submission
+                setTimeout(() => {
+                    newsletterSuccess.style.display = 'block';
+                    newsletterForm.reset();
+                    
+                    setTimeout(() => {
+                        newsletterSuccess.style.display = 'none';
+                    }, 5000);
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
